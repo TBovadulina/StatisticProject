@@ -46,7 +46,7 @@ public class StatsServiceTest {
     public void shouldFindMonthBelowAverage() {
         StatsService service = new StatsService();
         long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        long expectedBelow = 9;
+        long expectedBelow = 5;
         long actualBelow = service.monthBelowAverage(sales);
         Assertions.assertEquals(expectedBelow, actualBelow);
     }
@@ -55,7 +55,7 @@ public class StatsServiceTest {
     public void shouldFindMontAboveAverage() {
         StatsService service = new StatsService();
         long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        long expectedAbove = 9;
+        long expectedAbove = 5;
         long actualAbove = service.monthAboveAverage(sales);
         Assertions.assertEquals(expectedAbove, actualAbove);
     }

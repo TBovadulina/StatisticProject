@@ -41,12 +41,12 @@ public class StatsService {
         return minMonth + 1;
     }
 
-    public long monthBelowAverage(long[] sales) {
+    public int monthBelowAverage(long[] sales) {
         long sumAverage = averageSumSalesPerMonth(sales); // количество месяцев, в которых продажи были ниже среднего
         int belowAverage = 0;
 
         for (int i = 0; i < sales.length; i++) {
-            if (sales[i] > sales[sumAverage]) {
+            if (sales[i] < sumAverage) {
                 belowAverage += 1;
             }
         }
@@ -58,7 +58,7 @@ public class StatsService {
         int aboveAverage = 0;
 
         for (int i = 0; i < sales.length; i++) {
-            if (sales[i] < sales[sAverage]) {
+            if (sales[i] > sAverage) {
                 aboveAverage += 1;
             }
         }
